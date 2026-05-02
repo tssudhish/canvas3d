@@ -1,42 +1,67 @@
 [
   {
-    "id": "ply1-base",
-    "color": "#3b82f6",
-    "vertices": [[-5, -3], [5, -3], [5, 3], [-5, 3]],
+    "id": "ply-custom-5748",
+    "color": "#aa3bff",
+    "vertices": [
+      [3.1711, 1.5302],
+      [3.3544, 12.9328],
+      [35.6549, 11.7431],
+      [33.4726, 5.3309]
+    ],
     "zOffset": 0,
     "orientation": 0,
     "thickness": 0.00025
   },
   {
-    "id": "ply2-cross",
-    "color": "#ef4444",
-    "vertices": [[-1, -4], [1, -4], [1, 4], [-1, 4]],
+    "id": "ply-custom-3924",
+    "color": "#3d44ff",
+    "vertices": [
+      [4.3903, 2.1962],
+      [4.5085, 12.3807],
+      [33.9128, 11.3463],
+      [31.9905, 5.5885]
+    ],
     "zOffset": 0.2,
+    "orientation": 45,
+    "thickness": 0.00025
+  },
+  {
+    "id": "ply-custom-0884",
+    "color": "#ff3d5a",
+    "vertices": [
+      [4.7343, 2.4094],
+      [4.6433, 12.1897],
+      [33.918, 11.1519],
+      [31.9905, 5.5885]
+    ],
+    "zOffset": 0.4,
     "orientation": 90,
     "thickness": 0.00025
   },
   {
-    "id": "ply3-diag",
-    "color": "#22c55e",
-    "vertices": [[-4, -3], [-3, -4], [4, 3], [3, 4]],
-    "zOffset": 0.4,
-    "orientation": 45,
-    "thickness": 0.00025
-  },
-  {
-    "id": "ply4-strip",
-    "color": "#eab308",
-    "vertices": [[-5, 1.5], [5, 1.5], [5, 2.5], [-5, 2.5]],
+    "id": "ply-custom-1308",
+    "color": "#3dffab",
+    "vertices": [
+      [5.2872, 2.6091],
+      [5.5592, 11.8898],
+      [32.8163, 11.1226],
+      [31.1446, 5.6957]
+    ],
     "zOffset": 0.6,
-    "orientation": 0,
+    "orientation": 45,
     "thickness": 0.00025
   },
   {
-    "id": "ply5-patch",
-    "color": "#a855f7",
-    "vertices": [[2, -2], [4, 0], [2, 2], [0, 0]],
+    "id": "ply-custom-3956",
+    "color": "#fcff3d",
+    "vertices": [
+      [6.3103, 3.1551],
+      [6.6116, 11.3341],
+      [31.4692, 10.568],
+      [29.973, 5.8591]
+    ],
     "zOffset": 0.8,
-    "orientation": 45,
+    "orientation": 0,
     "thickness": 0.00025
   }
 ]

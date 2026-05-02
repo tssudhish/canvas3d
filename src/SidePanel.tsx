@@ -18,9 +18,15 @@ interface SidePanelProps {
   onAddPly: () => void;
   onClearDraft: () => void;
   canAddPly: boolean;
+  onExportPlies: () => void;
+  datasets: string[];
+  currentDataset: string;
+  onLoadDataset: (filename: string) => void;
+  onNewDataset: () => void;
+  onClearWorkspace: () => void;
 }
 
-export const SidePanel: React.FC<SidePanelProps> = ({ mode, onModeChange, tilt, onTiltChange, gapScale, onGapScaleChange, thicknessScale, onThicknessScaleChange, selectedPly, draftOrientation, onDraftOrientationChange, draftColor, onDraftColorChange, onAddPly, onClearDraft, canAddPly }) => {
+export const SidePanel: React.FC<SidePanelProps> = ({ mode, onModeChange, tilt, onTiltChange, gapScale, onGapScaleChange, thicknessScale, onThicknessScaleChange, selectedPly, draftOrientation, onDraftOrientationChange, draftColor, onDraftColorChange, onAddPly, onClearDraft, canAddPly, onExportPlies, datasets, currentDataset, onLoadDataset, onNewDataset, onClearWorkspace }) => {
   return (
     <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: '#2a2a2a', color: 'white', borderLeft: '1px solid #444', minWidth: '250px', boxSizing: 'border-box' }}>
       {/* Mode Toggle */}
@@ -114,6 +120,23 @@ export const SidePanel: React.FC<SidePanelProps> = ({ mode, onModeChange, tilt, 
           </p>
         </>
       )}
+
+      {/* Global Actions */}
+      <div style={{ marginTop: 'auto', width: '100%', paddingTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <select value={currentDataset} onChange={(e) => onLoadDataset(e.target.value)} style={{ width: '100%', padding: '10px', backgroundColor: '#eab308', color: 'black', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
+          {datasets.length === 0 && <option value="">Loading datasets...</option>}
+          {datasets.map(ds => <option key={ds} value={ds}>{ds}</option>)}
+        </select>
+        <button onClick={onNewDataset} style={{ width: '100%', padding: '10px', backgroundColor: '#10b981', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
+          New Dataset
+        </button>
+        <button onClick={onExportPlies} style={{ width: '100%', padding: '10px', backgroundColor: '#3b82f6', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
+          Save to Server
+        </button>
+        <button onClick={onClearWorkspace} style={{ width: '100%', padding: '10px', backgroundColor: '#ef4444', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
+          Clear Workspace
+        </button>
+      </div>
     </div>
   );
 };
