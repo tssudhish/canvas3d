@@ -1,20 +1,42 @@
 [
   {
-    "id": "ply1",
-    "color": "#4287f5",
-    "vertices": [[-3, -3], [3, -3], [3, 3], [-3, 3]],
-    "zOffset": 0
+    "id": "ply1-base",
+    "color": "#3b82f6",
+    "vertices": [[-5, -3], [5, -3], [5, 3], [-5, 3]],
+    "zOffset": 0,
+    "orientation": 0,
+    "thickness": 0.00025
   },
   {
-    "id": "ply2",
-    "color": "#f54242",
-    "vertices": [[-1, -4], [5, -4], [1, 4], [-5, 4]],
-    "zOffset": 0.2
+    "id": "ply2-cross",
+    "color": "#ef4444",
+    "vertices": [[-1, -4], [1, -4], [1, 4], [-1, 4]],
+    "zOffset": 0.2,
+    "orientation": 90,
+    "thickness": 0.00025
   },
   {
-    "id": "ply3",
-    "color": "#42f560",
-    "vertices": [[-4, 0], [0, -4], [4, 0], [0, 4]],
-    "zOffset": 0.4
+    "id": "ply3-diag",
+    "color": "#22c55e",
+    "vertices": [[-4, -3], [-3, -4], [4, 3], [3, 4]],
+    "zOffset": 0.4,
+    "orientation": 45,
+    "thickness": 0.00025
+  },
+  {
+    "id": "ply4-strip",
+    "color": "#eab308",
+    "vertices": [[-5, 1.5], [5, 1.5], [5, 2.5], [-5, 2.5]],
+    "zOffset": 0.6,
+    "orientation": 0,
+    "thickness": 0.00025
+  },
+  {
+    "id": "ply5-patch",
+    "color": "#a855f7",
+    "vertices": [[2, -2], [4, 0], [2, 2], [0, 0]],
+    "zOffset": 0.8,
+    "orientation": 45,
+    "thickness": 0.00025
   }
 ]

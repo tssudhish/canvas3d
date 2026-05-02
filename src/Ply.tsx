@@ -7,10 +7,12 @@ export interface PlyProps {
   vertices: [number, number][]
   zOffset: number
   color: string
+  orientation: number
+  thickness: number
   onClick?: (id: string) => void
 }
 
-export const Ply: React.FC<PlyProps> = ({ id, vertices, zOffset, color, onClick }) => {
+export const Ply: React.FC<PlyProps> = ({ id, vertices, zOffset, color, orientation, thickness, onClick }) => {
   const [hovered, setHovered] = useState(false)
 
   // Construct the Three.js Shape from the provided 2D vertices
@@ -49,7 +51,7 @@ export const Ply: React.FC<PlyProps> = ({ id, vertices, zOffset, color, onClick 
       }}
     >
       {/* Using extrudeGeometry to give the 2D shape a slight 3D thickness */}
-      <extrudeGeometry args={[shape, { depth: 0.05, bevelEnabled: false }]} />
+      <extrudeGeometry args={[shape, { depth: thickness, bevelEnabled: false }]} />
       {/* Add an emissive glow when hovered */}
       <meshStandardMaterial color={color} emissive={color} emissiveIntensity={hovered ? 0.4 : 0} side={THREE.DoubleSide} />
       
@@ -57,7 +59,7 @@ export const Ply: React.FC<PlyProps> = ({ id, vertices, zOffset, color, onClick 
       {hovered && (
         <Html position={centroid} center style={{ pointerEvents: 'none' }}>
           <div style={{ background: 'rgba(0,0,0,0.8)', color: 'white', padding: '4px 8px', borderRadius: '4px', whiteSpace: 'nowrap', fontSize: '14px' }}>
-            {id}
+            {id} ({orientation}°)
           </div>
         </Html>
       )}
